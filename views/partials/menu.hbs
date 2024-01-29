@@ -1,0 +1,51 @@
+<div class="container w-50">
+    <img src="../img/logo.svg" alt="logo">
+</div>
+
+<div class="container-fluid d-flex justify-content-center flex-nowrap">
+    <nav class="navbar flex-column navbar-light">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="nav-link" id="dashboard" href="/dashboard">
+                        <i class="bi bi-house-door-fill" style="margin-right: 6px"></i>
+                        Startseite
+                    </a>
+                </li>
+            </div>
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="nav-link" id="profile" href="/profile/{{loggedInUser.name}}">
+                        <i class="bi bi-person-fill" style="margin-right: 6px"></i>
+                        Profil
+                    </a>
+                </li>
+            </div>
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="nav-link" id="users" href="/users">
+                        <i class="bi bi-people-fill" style="margin-right: 6px"></i>
+                        Nutzer
+                    </a>
+                </li>
+            </div>
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="nav-link" id="othern" href="/othern">
+                        <button class="btn btn-primary btn-block w-100 rounded-pill" type="button">Othern</button>
+                    </a>
+                </li>
+            </div>
+            <div class="container-fluid">
+                <a class="nav-link" id="logout" href="/logout">
+                    <button class="btn btn-primary btn-block w-100 rounded-pill" type="button">Logout</button>
+                </a>
+            </div>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    $("#{{id}}").addClass("active");
+</script>
+

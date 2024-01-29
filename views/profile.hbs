@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-3 p-3">
+            <div class="position-fixed">
+                {{> menu id="profile" }}
+            </div>
+        </div>
+
+        <div class="col-6 p-4">
+            <h3>{{title}}</h3>
+            <div class="container-fluid row p-2">
+                <div class="col-md-3">
+                    <img class="rounded-circle border border-secondary-subtle img-fluid" alt="{{user.name}}" src="../img/users/{{user.profile_pic}}.png"/>
+                </div>
+                <div class="col-md-9 p-5 pt-1">
+                    <span>{{user.bio_text}}</span>
+                    {{#if isItMe}}
+                        <form class="mt-5" action='/upload' method='post' encType="multipart/form-data">
+                            <input class="form-control form-control-sm" accept="image/png" type="file" name="sampleFile"/>
+                            <button type="submit" class="btn btn-primary btn-sm btn-block w-100">Profilbild aktualisieren</button>
+                        </form>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="container-fluid p-2">
+                <span style="font-weight: bold">{{user.name}}</span>
+                <span class="text-secondary">@{{user.name}}</span><br>
+                <span>Mitglied seit: {{user.created}}</span><br>
+                <span>Geburtsdatum: {{user.birthday}}</span>
+                <div class="container-fluid row mt-4 mb-4">
+                    <div class="col-md-4">
+                        <span>{{numOthers}} {{oneOrMore}}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>{{followStatistic.follower}} Follower</span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Folgt {{followStatistic.followed}}</span>
+                    </div>
+                </div>
+            </div>
+            {{> listothers isItMe=isItMe }}
+        </div>
+
+        <div class="col-3 p-3">
+            <div class="position-fixed">
+                {{> search }}
+            </div>
+        </div>
+    </div>
+</div>

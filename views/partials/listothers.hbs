@@ -1,0 +1,27 @@
+{{#each others}}
+    <div class="container-fluid row p-2 mb-2 border border-secondary-subtle">
+        <div class="container-fluid col-md-2">
+            <img class="rounded-circle border border-secondary-subtle img-fluid" alt="{{name}}" src="../img/users/{{profile_pic}}.png"/>
+        </div>
+        <div class="container-fluid col-md-10">
+            <div class="container-fluid row">
+                <div class="col-md-11">
+                    <a href="/profile/{{name}}" style="font-weight: bold; text-decoration: none; color: black">{{name}}</a>
+                    <span class="text-secondary">@{{name}}</span>
+                    <span class="text-secondary">&#8901;</span>
+                    <span class="text-secondary">{{date}}</span>
+                    <span class="text-secondary">um</span>
+                    <span class="text-secondary">{{time}}</span>
+                </div>
+                <div class="col-md-1 position-relative">
+                    {{#if ../isItMe }}
+                        <a href="/othern/delete/{{other_id}}" class="bi bi-trash3 text-secondary p-1 border position-absolute start-100" role="button"></a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="container-fluid row">
+                <p class="text-break">{{text}}</p>
+            </div>
+        </div>
+    </div>
+{{/each}}

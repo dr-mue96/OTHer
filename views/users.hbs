@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-3 p-3">
+            <div class="position-fixed">
+                {{> menu id="users"}}
+            </div>
+        </div>
+
+        <div class="col-6 p-4">
+                <h3>{{title}}</h3>
+            <div class="">
+            {{> listusers }}
+            </div>
+        </div>
+
+        <div class="col-3 p-3">
+            <div class="position-fixed">
+                {{> search }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{{#each users}}
+    <div class="container-fluid row p-2 mb-2 border border-secondary-subtle">
+        <div class="col-md-2">
+            <img class="rounded-circle border border-secondary-subtle img-fluid" alt="{{name}}" src="./img/users/{{profile_pic}}.png"/>
+        </div>
+        <div class="container col-md-7">
+            <a href="/profile/{{name}}" style="font-weight: bold; text-decoration: none; color: black">{{name}}</a>
+            <span class="text-secondary">@{{name}}</span>
+        </div>
+        <div class="container col-md-3">
+            <form action="/users/follow/{{user_id}}/{{followed}}" method="POST">
+                {{#if followed}}
+                    <button type="submit" class="btn btn-danger btn-block w-100 rounded-pill">Entfolgen</button>
+                {{else}}
+                    <button type="submit" class="btn btn-primary btn-block w-100 rounded-pill">Folgen</button>
+                {{/if}}
+            </form>
+        </div>
+    </div>
+{{/each}}
